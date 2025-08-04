@@ -1,12 +1,28 @@
-export default function AboutPage() {
+import Image from "next/image"
 
+export default function AboutPage() {
   return (
-    <div className="h-screen">
-      <div className="bg-black/30 bg-radial-[at_25%_25%] from-black to-zinc-950 to-75% rounded-md p-8">
-        <p>
-          Hi, I am Jan-Willem van der Boom, 36 years old. Data analyst. I have a passion for problem-solving, puzzles and patterns. Both art and coding allow me to express and challenge myself. Check it out.
+    <div className=" p-4 flex flex-row gap-8">
+      <div className="rounded-md p-8 flex-1 content-evenly text-2xl">
+          <h2 className="text-3xl font-black tracking-tighter mb-6 opacity-30">
+            I AM
+          </h2>
+
+          <h1 className="text-6xl font-black tracking-tighter mb-6 opacity-90">
+           SUBTRACTING
+          </h1>
+        <p className="text-1xl tracking-wide opacity-60">
+          a developer and artist with
+          a passion for problem-solving, puzzles and patterns. coding and art allow me to express and challenge myself
         </p>
       </div>
+      <Image
+        src="/art/portrait.png"
+        alt="my_portrait"
+        width={200}
+        height={400}
+        className="rounded-lg object-cover flex-none"
+      />
     </div>
   )
 }

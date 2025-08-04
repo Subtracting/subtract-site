@@ -79,7 +79,8 @@ export default function ProjectsPage() {
           transition={{ duration: 0.4, delay: index * 0.1 }}
           viewport={{ once: true }}
           className="flex flex-col md:flex-row gap-6 items-start
-                     bg-black/30 bg-radial-[at_25%_25%] from-black to-zinc-950 to-75%
+                     bg-black/30
+                     bg-radial-[at_25%_25%] from-black to-zinc-950 to-75%
                      border-0 border-zinc-900
                      rounded-md pb-8 p-8"
         >
