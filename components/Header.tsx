@@ -5,10 +5,10 @@ import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 
 const navItems = [
-  { name: 'About', href: '/about' },
-  { name: 'Projects', href: '/projects' },
-  { name: 'Art', href: '/art' },
-  { name: 'Blog', href: '/blog' },
+  { name: 'about', href: '/about' },
+  { name: 'projects', href: '/projects' },
+  { name: 'art', href: '/art' },
+  { name: 'blog', href: '/blog' },
 ]
 
 export default function Header() {
@@ -16,20 +16,14 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-black/50 backdrop-blur
                        border-b border-zinc-900 px-4 py-3
-                       bg-radial-[at_25%_25%] from-black to-zinc-950 to-75%">
+                       ">
       <nav className="max-w-4xl mx-auto flex justify-between items-center">
         <div className="flex items-center">
-          <Image
-            src="/art/logo.png"
-            alt="my_portrait"
-            width={50}
-            height={50}
-            className="rounded-lg pr-4"
-          />
           <Link href="/" className="text-lg font-semibold ml-0">
-            sub.tracting<span className='text-neutral-500'>{pathname}</span>
+            subtracting<span className='text-neutral-500'>{pathname}</span>
           </Link>
         </div>
+        <div className='flex items-center'>
         <ul className="flex space-x-6 text-sm">
           {navItems.map((item) => (
             <li key={item.name}>
@@ -39,6 +33,7 @@ export default function Header() {
             </li>
           ))}
         </ul>
+        </div>
       </nav>
     </header>
   )
