@@ -4,10 +4,10 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 const navItems = [
-  { name: 'about', href: '/about' },
+  { name: 'about', href: '/' },
   { name: 'projects', href: '#projects' },
-  { name: 'art', href: '/art' },
-  { name: 'blog', href: '/blog' },
+  { name: 'art', href: '/' },
+  { name: 'blog', href: '/' },
 ]
 
 const sections = ['home', 'art', 'projects', 'contact']
