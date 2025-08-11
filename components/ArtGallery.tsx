@@ -33,7 +33,7 @@ export default function ArtGallery() {
           className="transition-all duration-300 hover:invert rounded-lg object-cover w-full h-auto"
         />
         <Image
-          src="/art/portrait.png"
+          src="/art/art2.png"
           alt="my_portrait"
           width={200}
           height={400}
@@ -47,14 +47,14 @@ export default function ArtGallery() {
           className="transition-all duration-300 hover:invert rounded-lg object-cover w-full h-auto"
         />
         <Image
-          src="/art/portrait.png"
+          src="/art/art2.png"
           alt="my_portrait"
           width={200}
           height={400}
           className="transition-all duration-300 hover:invert rounded-lg object-cover w-full h-auto"
         />
         <Image
-          src="/art/portrait.png"
+          src="/art/art2.png"
           alt="my_portrait"
           width={200}
           height={400}
