@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export default function Hero() {
   return (
-    <div className="p-4 flex flex-row gap-8">
+    <div id="home" className="p-4 flex flex-row gap-8">
       <div className="rounded-md p-8 flex-1 content-evenly text-2xl">
           <h2 className="text-3xl font-black tracking-tighter mb-6 opacity-30">
             I AM
