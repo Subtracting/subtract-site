@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 
 const navItems = [
   { name: 'about', href: '/about' },
-  { name: 'projects', href: '/projects' },
+  { name: 'projects', href: '#projects' },
   { name: 'art', href: '/art' },
   { name: 'blog', href: '/blog' },
 ]
@@ -54,7 +54,7 @@ export default function Header() {
         <ul className="flex space-x-6 text-sm">
           {navItems.map((item) => (
             <li key={item.name}>
-              <Link href={item.href} className="hover:underline">
+              <Link href={item.href} className="hover:underline" scroll={true}>
                 {item.name}
               </Link>
             </li>

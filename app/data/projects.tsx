@@ -17,20 +17,20 @@ export const projects: Project[] = [
   {
     title: 'web graph extension',
     description: 'A machine-learning model that predicts short-term crypto movements using LSTMs and technical indicators.',
-    image: '/projects/crypto-bot.png',
+    image: '/projects/log.png',
     skills: ['Python', 'TensorFlow', 'Pandas'],
     link: 'https://github.com/yourusername/crypto-bot',
     year: 2024,
   }, {
     title: 'pathfinder',
     description: 'A retro-style platformer made with Love2D and Lua.',
-    image: '/projects/platformer.png',
+    image: '/projects/log.png',
     skills: ['Lua', 'Love2D', 'Pixel Art'],
     year: 2023,
   }, {
     title: 'dashboard generator',
     description: 'A retro-style platformer made with Love2D and Lua.',
-    image: '/projects/platformer.png',
+    image: '/projects/log.png',
     skills: ['Lua', 'Love2D', 'Pixel Art'],
     year: 2023,
   },    {
@@ -39,19 +39,7 @@ export const projects: Project[] = [
     image: '/projects/platformer.png',
     skills: ['Lua', 'Love2D', 'Pixel Art'],
     year: 2023,
-  }, {
-    title: 'crypto agent',
-    description: 'A retro-style platformer made with Love2D and Lua.',
-    image: '/projects/platformer.png',
-    skills: ['Lua', 'Love2D', 'Pixel Art'],
-    year: 2023,
-  }, {
-    title: 'finance dashboard',
-    description: 'A retro-style platformer made with Love2D and Lua.',
-    image: '/projects/platformer.png',
-    skills: ['Lua', 'Love2D', 'Pixel Art'],
-    year: 2023,
-  },
+  }
 ]
 
 

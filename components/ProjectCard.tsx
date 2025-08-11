@@ -22,7 +22,7 @@ export default function ProjectCard({ index, project }: { index: number; project
             width={800}
             height={300}
             className="w-full h-44 object-cover p-4
-                       opacity-80
+                       opacity-90
                        rounded-lg invert hover:invert-0
 
             "
@@ -35,12 +35,12 @@ export default function ProjectCard({ index, project }: { index: number; project
         </div>
 
         {/* Content */}
-        <div className="p-6 space-y-4">
+        <div className="p-6 pt-0 mb-2 space-y-4">
           <p className="text-lg tracking-wide text-white opacity-80">
             {project.description}
           </p>
 
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 m-2 ml-0 absolute bottom-0">
             {project.skills.map((skill) => (
               <span
                 key={skill}
@@ -51,16 +51,6 @@ export default function ProjectCard({ index, project }: { index: number; project
             ))}
           </div>
 
-          {project.link && (
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block text-red-600 hover:underline text-sm"
-            >
-              View Project
-            </a>
-          )}
         </div>
       </motion.div>
   )}
