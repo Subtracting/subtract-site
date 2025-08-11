@@ -25,7 +25,6 @@ test/lib/deployment/failed-page.txt
 .DS_Store
 .next
 /.env
-/public
 __pycache__
 .vercel
 .turbo
