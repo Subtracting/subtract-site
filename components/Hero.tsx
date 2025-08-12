@@ -11,7 +11,7 @@ export default function Hero() {
             I AM
           </h2>
           <h1
-            className="text-3xl md:text-7xl font-black tracking-tighter mb-6
+            className="text-3xl md:text-6xl font-black tracking-tighter mb-6
                        bg-gradient-to-r from-zinc-100 via-zinc-300 via-zinc-500 via-zinc-300 to-zinc-100
                        bg-clip-text text-transparent
                        [background-size:200%_100%] [animation:gradientShift_8s_linear_infinite]"
