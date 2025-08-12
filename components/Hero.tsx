@@ -4,17 +4,21 @@ export default function Hero() {
   return (
     <div
         id="home"
-        className="p-4 flex flex-col md:flex-row gap-8"
+        className="p-4 flex flex-col md:flex-row gap-8 justify-center"
     >
       <div className="rounded-md p-8 flex-1 content-evenly text-2xl">
           <h2 className="text-3xl font-black tracking-tighter mb-6 opacity-30">
             I AM
           </h2>
-
-          <h1 className="text-4xl md:text-6xl font-black tracking-tighter mb-6 opacity-90">
+          <h1
+            className="text-3xl md:text-7xl font-black tracking-tighter mb-6
+                       bg-gradient-to-r from-zinc-100 via-zinc-300 via-zinc-500 via-zinc-300 to-zinc-100
+                       bg-clip-text text-transparent
+                       [background-size:200%_100%] [animation:gradientShift_8s_linear_infinite]"
+          >
            SUBTRACTING
           </h1>
-        <p className="text-1xl tracking-wide opacity-60">
+        <p className="text-1xl tracking-wide opacity-40">
           a developer and artist with
           a passion for problem-solving, puzzles and patterns. coding and art allow me to express and challenge myself.
         </p>

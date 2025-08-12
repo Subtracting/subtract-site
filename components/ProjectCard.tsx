@@ -11,7 +11,7 @@ export default function ProjectCard({ index, project }: { index: number; project
         transition={{ duration: 0.4, delay: index * 0.1 }}
         viewport={{ once: true }}
         className="flex flex-col overflow-hidden relative
-                   border-6 border-black rounded-xl
+                   border-black rounded-xl
                    bg-linear-0 from-black to-zinc-900
       ">
         {/* Image */}
@@ -27,7 +27,7 @@ export default function ProjectCard({ index, project }: { index: number; project
 
             "
           />
-          <h2 className="text-3xl font-bold text-zinc-400 absolute top-9 right-0 bg-black rounded-l-lg p-3
+          <h2 className="text-2xl font-bold text-zinc-400 absolute top-9 right-0 bg-black rounded-l-lg p-3
                          border-2 border-black
                          ">
             {project.title}

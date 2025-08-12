@@ -44,7 +44,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-black/50 backdrop-blur
                        border-b border-zinc-900 px-4 py-3
                        ">
-      <nav className="max-w-4xl mx-auto flex justify-between items-center">
+      <nav className="max-w-5xl mx-auto flex justify-between items-center">
         <div className="flex items-center">
           <Link href="/" className="text-lg font-semibold ml-0">
             subtracting/<span className='text-neutral-500'>{activeSection}</span>
