@@ -3,7 +3,7 @@
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
-function noise2D(x, y, time = 0) {
+function noise2D(x: number, y: number, time = 0) {
     let value = 0;
     let amplitude = 1;
     let frequency = 0.9;
@@ -50,12 +50,12 @@ const fragmentShader = `
 `;
 
 export default function HeroAnimation() {
-    const mountRef = useRef(null);
-    const animationRef = useRef(null);
-    const timeRef = useRef(0);
-    const originalPositionsRef = useRef(null);
-    const displacementsRef = useRef(null);
-    const meshRef = useRef(null);
+    const mountRef = useRef<HTMLDivElement>(null);
+    const animationRef = useRef<number | null>(null);
+    const timeRef = useRef<number>(0);
+    const originalPositionsRef = useRef<Float32Array | null>(null);
+    const displacementsRef = useRef<Float32Array | null>(null);
+    const meshRef = useRef<THREE.Mesh | null>(null);
 
     useEffect(() => {
         if (!mountRef.current) return;
@@ -117,23 +117,25 @@ export default function HeroAnimation() {
             const originalPositions = originalPositionsRef.current;
             const displacements = displacementsRef.current;
 
-            for (let i = 0; i < positions.length; i += 3) {
-                const originalVertex = new THREE.Vector3(
-                    originalPositions[i],
-                    originalPositions[i + 1],
-                    originalPositions[i + 2]
-                );
+            if (originalPositions && displacements) {
+              for (let i = 0; i < positions.length; i += 3) {
+                  const originalVertex = new THREE.Vector3(
+                      originalPositions[i],
+                      originalPositions[i + 1],
+                      originalPositions[i + 2]
+                  );
 
-                const noiseValue = noise2D(originalVertex.x * 0.05, originalVertex.y * 0.05, timeRef.current);
-                const waveEffect = Math.sin(originalVertex.x * 5.05 + timeRef.current * .3);
-                const displacement = (noiseValue * .3 + waveEffect * 8);
-                const newPosition = originalVertex.normalize().multiplyScalar(radius + displacement);
+                  const noiseValue = noise2D(originalVertex.x * 0.05, originalVertex.y * 0.05, timeRef.current);
+                  const waveEffect = Math.sin(originalVertex.x * 5.05 + timeRef.current * .3);
+                  const displacement = (noiseValue * .3 + waveEffect * 8);
+                  const newPosition = originalVertex.normalize().multiplyScalar(radius + displacement);
 
-                positions[i] = newPosition.x;
-                positions[i + 1] = newPosition.y;
-                positions[i + 2] = newPosition.z;
+                  positions[i] = newPosition.x;
+                  positions[i + 1] = newPosition.y;
+                  positions[i + 2] = newPosition.z;
 
-                displacements[i / 3] = displacement;
+                  displacements[i / 3] = displacement;
+              }
             }
 
             geometry.attributes.position.needsUpdate = true;
