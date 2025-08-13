@@ -8,19 +8,19 @@ export default function Hero() {
         className="p-4 flex flex-col md:flex-row gap-8 justify-center"
     >
       <div className="rounded-md p-8 pr-2 flex-1 content-evenly text-2xl">
-          <h2 className="text-3xl font-black tracking-tighter mb-6 opacity-30">
+          <h2 className="text-3xl font-black tracking-tighter mb-6 text-zinc-700">
             I AM
           </h2>
           <h1
             className="text-3xl md:text-6xl font-black tracking-tighter mb-6
-                       bg-gradient-to-r from-zinc-100 via-amber-200/[40%] via-amber-100/[60%] via-amber-200/[80%] to-zinc-100
+                       bg-gradient-to-r from-zinc-100 via-green-200/[40%] via-amber-400/[60%] via-amber-200/[80%] to-zinc-100
                        bg-clip-text text-transparent
                        [background-size:200%_100%] [animation:gradientShift_8s_linear_infinite]"
           >
            SUBTRACTING
           </h1>
-        <p className="text-1xl tracking-wide opacity-40">
-          a developer and artist with
+        <p className="text-1xl tracking-wide text-zinc-500">
+          a <span className="text-zinc-400">developer</span> and <span className="text-zinc-400">artist</span> with
           a passion for problem-solving, puzzles and patterns. coding and art allow me to express and challenge myself.
         </p>
       </div>

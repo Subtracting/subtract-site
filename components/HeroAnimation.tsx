@@ -34,17 +34,22 @@ const fragmentShader = `
   varying float vHeight;
   uniform vec3 baseColor;
   uniform float glowIntensity;
+  uniform float highlightStrength;
 
-  vec3 getSpectralColor(float value) {
-      float r = sin(value * 9.28318 + 0.0) * 0.5 + 0.4;
-      float g = sin(value * 5.28318 + 2.0) * 0.5 + 0.32;
+  vec3 getSubtleHighlights(float value) {
+      float r = sin(value * 6.28318 + 0.0) * 0.5 + 0.5;
+      float g = sin(value * 6.28318 + 2.0) * 0.5 + 0.5;
       float b = sin(value * 6.28318 + 4.0) * 0.5 + 0.5;
       return vec3(r, g, b);
   }
 
   void main() {
-    vec3 spectralColor = getSpectralColor(vHeight);
-    vec3 finalColor = mix(baseColor, spectralColor, pow(vHeight, glowIntensity));
+    vec3 monochromeColor = vec3(vHeight);
+
+    vec3 highlightColor = getSubtleHighlights(vHeight);
+    vec3 mixedColor = mix(monochromeColor, highlightColor, highlightStrength);
+
+    vec3 finalColor = mix(baseColor, mixedColor, pow(vHeight, glowIntensity));
     gl_FragColor = vec4(finalColor, 1.0);
   }
 `;
@@ -67,7 +72,6 @@ export default function HeroAnimation() {
         const canvasWidth = 450;
         const canvasHeight = 450;
 
-        // Scene setup
         const scene = new THREE.Scene();
         scene.background = null;
 
@@ -87,6 +91,7 @@ export default function HeroAnimation() {
         const uniforms = {
             baseColor: { value: new THREE.Color(0x241314) },
             glowIntensity: { value: 2.0 },
+            highlightStrength: { value: 0.5}
         };
 
         const material = new THREE.ShaderMaterial({
