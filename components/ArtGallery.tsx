@@ -3,6 +3,7 @@ import '../styles/custom.css'
 import { artworks } from '@/app/data/artworks'
 
 export default function ArtGallery() {
+
   return (
     <div>
       <div id="art">
@@ -10,7 +11,7 @@ export default function ArtGallery() {
           ART
         </h1>
       </div>
-    <div className="w-full flex flex-col items-center py-8
+    <div className="w-full flex flex-col justify-center py-8
                     ">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-6 px-4 max-w-7xl">
 
