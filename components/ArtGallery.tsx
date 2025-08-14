@@ -2,11 +2,12 @@
 
 import React, { useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Scrollbar, Grid } from 'swiper/modules'
+import { Scrollbar, Grid, Pagination } from 'swiper/modules'
 
 import 'swiper/css'
 import 'swiper/css/grid'
 import 'swiper/css/scrollbar'
+import 'swiper/css/pagination'
 
 import Image from 'next/image'
 import '../styles/custom.css'
@@ -37,8 +38,8 @@ export default function ArtGallery() {
       </div>
 
       <Swiper
-        scrollbar={{ hide: false, draggable: true }}
-        modules={[Scrollbar, Grid]}
+        pagination={true}
+        modules={[Pagination, Grid]}
         slidesPerView={3}
         grid={{ rows: 2, fill: 'row' }}
         spaceBetween={0}
