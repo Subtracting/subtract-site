@@ -19,7 +19,10 @@ export default function ArtGallery() {
   const [selectedImage, setSelectedImage] = useState<Artwork | null>({ image: "/art/art1.png", alt: "art1_alt" })
 
   return (
-    <div className="flex flex-col md:flex-row gap-4 justify-center pl-8 pt-8 pb-8 pr-8 mt-10 bg-zinc-950 rounded-lg">
+    <div className="
+                  flex flex-col md:flex-row gap-4 justify-center pl-8 pt-8 pb-8 pr-8 mt-10
+                  bg-gradient-to-l from-zinc-950 via-black to-zinc-950
+                  rounded-lg">
 
       <div className="w-full md:w-96 flex items-center justify-center rounded-lg">
         {selectedImage ? (
@@ -30,7 +33,7 @@ export default function ArtGallery() {
             height={500}
             priority
             loading="eager"
-            className="rounded-lg object-contain invert"
+            className="rounded-lg invert"
           />
         ) : (
           <p className="text-neutral-500">Select an image</p>
