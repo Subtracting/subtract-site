@@ -12,7 +12,7 @@ export default function Projects() {
       </h1>
     </div>
     <div className="w-full p-4 py-8">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-screen-xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-screen-xl mx-auto">
         {projects.map((project, index) => (
             <ProjectCard
               index={index}
