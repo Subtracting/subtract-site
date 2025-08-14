@@ -1,37 +1,64 @@
-import Image from "next/image"
+'use client'
+
+import React, { useState } from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Scrollbar, Grid } from 'swiper/modules'
+
+import 'swiper/css'
+import 'swiper/css/grid'
+import 'swiper/css/scrollbar'
+
+import Image from 'next/image'
 import '../styles/custom.css'
+
+import type { Artwork } from '../app/types/artwork'
 import { artworks } from '@/app/data/artworks'
 
 export default function ArtGallery() {
+  const [selectedImage, setSelectedImage] = useState<Artwork | null>({ image: "/art/art1.png", alt: "art1_alt" })
 
   return (
-    <div>
-      <div id="art">
-        <h1 className="
-                    bg-zinc-950
-                    text-zinc-400 text-4xl font-black tracking-tighter p-4 max-w-24 items-center
-                    ">
-         art.
-        </h1>
-      </div>
-      <div className="
-                      w-full flex flex-col justify-center py-8
-                      bg-zinc-950 rounded-lg
-                      ">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-6 px-4 max-w-7xl">
+    <div className="flex flex-col md:flex-row gap-4 justify-center pl-8 pt-8 pb-8 pr-8 mt-10 bg-zinc-950 rounded-lg">
 
-          {artworks.map((artwork, index) => (
-              <Image
-                src={artwork.image}
-                alt={artwork.alt}
-                key={index}
-                width={300}
-                height={400}
-                className="transition-all duration-300 hover:invert rounded-lg object-cover w-full h-auto"
-              />
-          ))}
-        </div>
+      <div className="w-full md:w-96 flex items-center justify-center rounded-lg">
+        {selectedImage ? (
+          <Image
+            src={selectedImage.image}
+            alt={selectedImage.alt}
+            width={350}
+            height={500}
+            priority
+            loading="eager"
+            className="rounded-lg object-contain invert"
+          />
+        ) : (
+          <p className="text-neutral-500">Select an image</p>
+        )}
       </div>
+
+      <Swiper
+        scrollbar={{ hide: false, draggable: true }}
+        modules={[Scrollbar, Grid]}
+        slidesPerView={3}
+        grid={{ rows: 2, fill: 'row' }}
+        spaceBetween={0}
+        className="flex-1 rounded-lg bg-black"
+      >
+        {artworks.map((artwork, index) => (
+          <SwiperSlide key={index}>
+            <Image
+              src={artwork.image}
+              alt={artwork.alt}
+              width={300}
+              height={400}
+              className="transition-all duration-300 hover:invert object-cover cursor-pointer"
+              onClick={() => setSelectedImage(artwork)}
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
     </div>
   )
 }
+
