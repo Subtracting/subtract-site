@@ -2,11 +2,10 @@
 
 import React, { useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Scrollbar, Grid, Pagination } from 'swiper/modules'
+import { Grid, Pagination } from 'swiper/modules'
 
 import 'swiper/css'
 import 'swiper/css/grid'
-import 'swiper/css/scrollbar'
 import 'swiper/css/pagination'
 
 import Image from 'next/image'
@@ -19,14 +18,21 @@ export default function ArtGallery() {
   const [selectedImage, setSelectedImage] = useState<Artwork | null>({ image: "/art/art3.png", alt: "art3_alt" })
 
   return (
-    <div>
+    <div className='mb-16'>
      <div id="art">
-      <h1 className="bg-white/90 text-black text-3xl font-black tracking-tighter m-8 mt-20 pl-2 w-20">
-       ART
-      </h1>
+     <span className="flex items-center">
+        <span className="text-gray-900 dark:text-white">
+          <h1 className="bg-white/90 rounded-lg text-black text-3xl font-black tracking-tighter my-18 mr-6 pl-2 w-20">
+           ART
+          </h1>
+        </span>
+
+        <span className="h-px flex-1 bg-gradient-to-l from-zinc-900 to-zinc-800"></span>
+     </span>
+
     </div>
     <div className="
-                  flex flex-col md:flex-row gap-4 justify-center p-8 mt-10
+                  flex flex-col md:flex-row gap-4 justify-center p-8
                   bg-gradient-to-l from-zinc-950 via-black to-zinc-950
                   rounded-lg">
 
@@ -47,7 +53,7 @@ export default function ArtGallery() {
       </div>
 
       <Swiper
-        pagination={true}
+        pagination={{ clickable: true }}
         modules={[Pagination, Grid]}
         slidesPerView={3}
         grid={{ rows: 2, fill: 'row' }}

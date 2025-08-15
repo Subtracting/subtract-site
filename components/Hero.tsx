@@ -5,9 +5,9 @@ export default function Hero() {
   return (
     <div
         id="home"
-        className="p-4 flex flex-col md:flex-row gap-8 justify-center"
+        className="p-4 my-20 flex flex-col md:flex-row justify-center"
     >
-      <div className="rounded-md p-8 pr-2 flex-1 content-evenly text-2xl">
+      <div className="rounded-md p-8 flex-1 content-evenly text-2xl">
           <h2 className="text-3xl font-black tracking-tighter mb-6 text-zinc-700">
             I AM
           </h2>
@@ -26,13 +26,6 @@ export default function Hero() {
       </div>
       <div className="flex-none w-full max-w-sm min-w-[150px] max-w-[400px]">
         <HeroAnimation></HeroAnimation>
-      {/*<Image
-          src="/art/portrait2.png"
-          alt="my_portrait"
-          width={350}
-          height={400}
-          className="rounded-lg object-cover h-auto"
-        />*/}
       </div>
     </div>
   )

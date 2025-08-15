@@ -9,7 +9,6 @@ export default function Home() {
       <Hero></Hero>
       <ArtGallery></ArtGallery>
       <Projects></Projects>
-      <Misc></Misc>
    </div>
   )
 }

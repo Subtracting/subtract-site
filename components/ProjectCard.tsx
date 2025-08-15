@@ -14,24 +14,27 @@ export default function ProjectCard({ index, project }: { index: number; project
                    border-black rounded-xl
                    bg-linear-0 from-black to-zinc-900
       ">
-        {/* Image */}
         <div className="relative">
           <Image
             src={project.image}
             alt={project.title}
             width={800}
             height={300}
-            className="w-full h-44 object-cover p-4
+            className="w-full h-74 object-cover p-4
                        opacity-90
-                       rounded-lg invert hover:invert-0
+                       rounded-lg
 
             "
           />
-          <h2 className="text-2xl font-bold text-zinc-400 absolute top-9 right-0 bg-black rounded-l-lg p-3
-                         border-2 border-black
-                         ">
-            {project.title}
-          </h2>
+            <h2 className="text-2xl font-bold absolute top-9 right-0 rounded-l-lg p-3 bg-black">
+              <span className='
+                           bg-gradient-to-r from-zinc-200 via-zinc-400/[60%] via-amber-200/[80%] to-zinc-200
+                           bg-clip-text text-transparent
+                           [background-size:200%_100%] [animation:gradientShift_18s_linear_infinite]
+                           '>
+                {project.title}
+              </span>
+            </h2>
         </div>
 
         {/* Content */}
