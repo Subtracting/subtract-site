@@ -53,6 +53,16 @@ export default function ProjectCard({ index, project }: { index: number; project
               </span>
             ))}
           </div>
+          {/*
+
+          <Image
+            src="/misc/github-mark.png"
+            alt="github-logo"
+            width={20}
+            height={20}
+            className='absolute right-0 bottom-0 m-4'
+          />
+          */}
 
         </div>
       </motion.div>
