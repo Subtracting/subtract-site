@@ -16,7 +16,7 @@ const components = {
 };
 
 export default async function BlogPage({ params }: Props) {
-  const { slug } = await params;
+  const { slug } = params;
   const postsDir = path.join(process.cwd(), 'posts');
   const filePath = path.join(postsDir, `${slug}.mdx`);
 
