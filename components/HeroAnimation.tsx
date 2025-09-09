@@ -62,7 +62,12 @@ const fragmentShader = `
   }
 `
 
-export default function HeroAnimation() {
+interface canvasProps {
+  canvasWidth: number,
+  canvasHeight: number
+}
+
+export default function HeroAnimation({ canvasWidth, canvasHeight }: canvasProps) {
     const mountRef = useRef<HTMLDivElement>(null)
     const animationRef = useRef<number | null>(null)
     const timeRef = useRef<number>(0)
@@ -73,9 +78,6 @@ export default function HeroAnimation() {
         const size = 60
         const segments = 128
         const radius = size
-
-        const canvasWidth = 450
-        const canvasHeight = 450
 
         const scene = new THREE.Scene()
         scene.background = null
@@ -133,6 +135,6 @@ export default function HeroAnimation() {
         }
     }, [])
 
-    return <div ref={mountRef} style={{ width: '450px', height: '450px' }} />
+    return <div ref={mountRef} style={{ width: `${canvasWidth}px`, height: `${canvasHeight}px` }} />
 }
 

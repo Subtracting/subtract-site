@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import HeroAnimation from './HeroAnimation'
 
 export default function Hero() {
@@ -25,7 +24,10 @@ export default function Hero() {
         </p>
       </div>
       <div className="flex-none w-full max-w-sm min-w-[150px] max-w-[400px]">
-        <HeroAnimation></HeroAnimation>
+        <HeroAnimation
+          canvasHeight={450}
+          canvasWidth={350}
+        />
       </div>
     </div>
   )
