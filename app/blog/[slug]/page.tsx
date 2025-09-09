@@ -4,7 +4,7 @@ import matter from 'gray-matter';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import CodeBlock from '@/components/CodeBlock';
 
-type Props = { params: { slug: string } };
+type Props = { params: Promise<{ slug: string }> };
 
 const components = {
   pre: (props: any) => <div {...props} />,
@@ -16,7 +16,7 @@ const components = {
 };
 
 export default async function BlogPage({ params }: Props) {
-  const { slug } = params;
+  const { slug } = await params;
   const postsDir = path.join(process.cwd(), 'posts');
   const filePath = path.join(postsDir, `${slug}.mdx`);
 
